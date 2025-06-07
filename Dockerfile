@@ -6,7 +6,7 @@ RUN mvn clean package -DskipTests
 
 # Etapa 2: ejecutar el JAR con Java
 
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
