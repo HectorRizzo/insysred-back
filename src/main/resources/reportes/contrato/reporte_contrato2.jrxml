@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte_contrato" pageWidth="595" pageHeight="842" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6f0d106-011a-4360-8fcd-39553f713ed8">
+	<property name="ireport.zoom" value="1.1289478601075806"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="432"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="emp_logo" class="java.lang.String"/>
+	<parameter name="emp_direccion" class="java.lang.String"/>
+	<parameter name="emp_email" class="java.lang.String"/>
+	<parameter name="emp_telefonos" class="java.lang.String"/>
+	<parameter name="idContrato" class="java.lang.Long"/>
+	<parameter name="fechaContrato" class="java.lang.String"/>
+	<field name="nombreEmpresaCliente" class="java.lang.String"/>
+	<field name="identificacionCliente" class="java.lang.String"/>
+	<field name="nombreCliente" class="java.lang.String"/>
+	<field name="direccionCliente" class="java.lang.String"/>
+	<field name="telefonosCliente" class="java.lang.String"/>
+	<field name="correoCliente" class="java.lang.String"/>
+	<field name="cantonCliente" class="java.lang.String"/>
+	<field name="provinciaCliente" class="java.lang.String"/>
+	<field name="nombreReferencia" class="java.lang.String"/>
+	<field name="parentescoReferencia" class="java.lang.String"/>
+	<field name="direccionReferencia" class="java.lang.String"/>
+	<field name="ciudadReferencia" class="java.lang.String"/>
+	<field name="telefonosReferencia" class="java.lang.String"/>
+	<field name="correoReferencia" class="java.lang.String"/>
+	<field name="contratoPrestacion" class="java.lang.String"/>
+	<title>
+		<band height="90">
+			<textField>
+				<reportElement x="0" y="34" width="314" height="15" forecolor="#00008C" uuid="0188e02b-9ba2-4e77-948e-eabc1ec0a4a3"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{emp_direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="49" width="314" height="15" forecolor="#00008C" uuid="3a0a2e16-bd89-4190-ac12-232e76188d33"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TELF: " + $P{emp_telefonos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="64" width="314" height="16" forecolor="#00008C" uuid="c4c78278-030f-4abc-ab2b-6a11c329e67f"/>
+				<box bottomPadding="3"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EMAIL: " + $P{emp_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="64" width="241" height="16" forecolor="#00008C" uuid="03411e63-ecda-4e02-9321-8b0496996d72"/>
+				<box bottomPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaContrato}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement mode="Transparent" x="409" y="0" width="146" height="54" forecolor="#00008C" uuid="bb1d439d-f0b3-4f08-8c4d-142237479977"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="409" y="0" width="146" height="16" forecolor="#00008C" uuid="380f5f0a-ace9-4b47-885f-47ea56e44f39"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEN DE SERVICIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="409" y="38" width="146" height="16" forecolor="#00008C" uuid="a74bf3a1-e2dd-42f8-a745-a20207b1e6e2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R.U.C: " + "0992220554001"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="16" width="146" height="22" forecolor="#EE1212" uuid="fb76789b-fcd4-4d53-85f7-0d1604d615eb"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="17" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N° " + $P{idContrato}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="1" y="-1" width="184" height="35" uuid="aa599682-a2ac-4c2b-bbd6-b88c4131e19e"/>
+				<imageExpression><![CDATA[$P{emp_logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="17" uuid="3dbbfd1a-a930-4995-8fdf-b38f3989816b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="17" width="76" height="15" uuid="46aaf76a-431a-4a94-b880-59395600c95a"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[EMPRESA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="17" width="75" height="15" uuid="6d00c5f7-75f0-4fc6-9bd7-70deeb97104c"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC/CI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="76" height="15" uuid="95f93f94-ee26-4c6d-a600-cb9f717bc5d9"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="32" width="75" height="15" uuid="f6df39d1-4f61-4e91-a62a-4d23f08a974b"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="47" width="75" height="15" uuid="068172eb-36db-4c35-b9aa-f021770d2863"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CORREO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="47" width="76" height="15" uuid="4cfb02a3-c464-4027-8cf8-ae423ddecd8a"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="62" width="75" height="15" uuid="226ab9a1-564d-4d52-b3bd-0817fcb575fa"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROVINCIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="62" width="76" height="15" uuid="e8a6b445-716d-4960-926b-e8acbae3950d"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTÓN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="76" y="17" width="202" height="15" uuid="d6c6f5f8-c882-49f2-86c0-8c58f036a7bc"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresaCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="17" width="202" height="15" uuid="635a9804-4d06-4207-9752-a56913fe69c1"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{identificacionCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="32" width="202" height="15" uuid="d15ccb13-81c6-4517-894f-d7551fffef7b"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="32" width="202" height="15" uuid="4c31dba2-eef1-47ac-a6c1-9fd0cce47a3f">
+					<printWhenExpression><![CDATA[$F{direccionCliente} != null]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="47" width="202" height="15" uuid="c97a05a8-c795-4b01-9d0c-97ab6a2670b8"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{correoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="47" width="202" height="15" uuid="a34d3bc3-8423-4d1c-b32b-ca563a085337"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonosCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="62" width="202" height="15" uuid="8648e6cd-11fb-40a9-bb12-fe00884d108c"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{provinciaCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="62" width="202" height="15" uuid="985f7aca-105e-4b1f-ac5a-f9b5abbc612e"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantonCliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="83" width="555" height="17" uuid="25ac0809-7c03-4240-a114-d451fc6bd086"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REFERENCIA PERSONAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="76" height="15" uuid="040a0625-f8a7-409f-964c-a56616ee3098"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="76" height="15" uuid="8e3d2d54-fc67-40a7-9509-9762f395afaa"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="115" width="76" height="15" uuid="a47f2206-403a-4d6c-a4c9-8517c8794049"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="115" width="75" height="15" uuid="0d3935d5-2daf-4331-90d8-8d8f033cfc4e"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIUDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="130" width="75" height="15" uuid="04ae55f8-543b-4ab4-b06a-06cc82d8cad0"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CORREO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="100" width="75" height="15" uuid="0bd77d26-54bc-4db2-8a2d-f7fb54bfae42"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARENTESCO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="76" y="130" width="202" height="15" uuid="ce8ad285-f94c-4bf7-8722-5b19d958138f"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonosReferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="115" width="202" height="15" uuid="7fa529d4-1311-4f64-bca6-d39f037fc8f0"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionReferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="100" width="202" height="15" uuid="bd020750-9429-4250-9877-d8a34dab96f4"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreReferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="130" width="202" height="15" uuid="a186ba3b-08b0-4bd0-827a-b942a1a9f4d6"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{correoReferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="115" width="202" height="15" uuid="13770739-1618-4cf4-a914-3872540e6f74"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ciudadReferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="100" width="202" height="15" uuid="766e2df3-f6b8-4ae0-b363-4f9ddd716c18"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parentescoReferencia}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="0116c9ea-5fff-45eb-ba95-66d8b1bd21ff"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contratoPrestacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="fd312ed6-86a7-4b70-8c17-1e1233af3765"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTRATO DE PRESTACIÓN DE SERVICIOS DE VALOR AGREGADO DE ACCESO A INTERNET No. 000181
+
+]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="b78ffb8b-3f20-4e02-abb3-1f3659e14ebd"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[PRIMERA.- ANTECEDENTES]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="6f075d32-f7bd-4cd6-aef5-58871fd435f0"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El PROVEEDOR se encuentra autorizado para prestar Servicios de Valor Agregado de Acceso a Internet de acuerdo a la Resolución No. 362-08-CONATEL-2011 del 28 de abril de 2011 y el Permiso para la Prestación de Servicios de Valor Agregado de fecha 28 de junio de 2011 inscrito en el Tomo 93 a Fojas 9329 del Registro Público de Telecomunicaciones, en la misma fecha."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="8e7a2f15-561e-4067-b01c-9285e24d8656"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El presente contrato tiene por objeto que EL PROVEEDOR proporcione a EL CLIENTE el acceso a la red internet conforme a las características pactadas, que se describen en los Anexos Técnico y Comercial que debidamente firmados por las partes, son integrantes de este instrumento. Las partes aceptan que este instrumento constituya un contrato marco general, y que, en adelante los servicios, cambios en los servicios, y cualquier otra modificación que se implemente; se realizará mediante la suscripción de nuevos Anexos Técnico (s) y Comercial (es) correspondientes, que debidamente firmados por las partes, serán integrantes de este Contrato, que se seguirán las condiciones generales de este instrumento con las especificaciones de los respectivos Anexos que suscriban las partes. EL PROVEEDOR guardará cronológicamente, para efectos de prueba, los Anexos que llegaren a suscribirse entre las partes."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="3c43c929-3282-4fe3-9026-e12d6ffa9cbc"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEGUNDA.- OBJETO, CARACTERISTICAS]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="0cb0799a-3642-42d5-bd4d-72d9dde3c6e7"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[TERCERA.- PRECIO Y FORMA DE PAGO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="0b99b609-6ee7-4d10-8330-787207b830c3"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["a) El precio acordado por la instalación y puesta en funcionamiento por el Servicio de Acceso a Internet es el que consta en el ANEXO 2 (comercial), y que firmado por las partes, es integrante del presente contrato. b) El precio mensual acordado por la prestación del Servicio de Acceso a Internet, es el que corresponde al Plan contratado, y cuyo valor mensual y descripción consta en el ANEXO 2 (Comercial), que debidamente firmado por las partes, es integrante del presente contrato. c) El Plan contratado se pagará en mensualidades, pagaderas por el CLIENTE a EL PROVEEDOR por mes adelantado, dentro de los 5 días primeros días de cada mes calendario; previo la entrega de la factura por el servicio contratado. En caso que, el CLIENTE no cancele los valores hasta el vigésimo día dentro del mes calendario que se encuentre en curso, EL PROVEEDOR tiene la facultad de suspender la prestación del servicio en cualquier momento, de no producirse el pago del plan dentro del plazo antes señalado, sin que implique terminación de contrato. En los casos que corresponda, se cobrarán los rubros antes indicados y la mensualidad en lo proporcional del mes de facturación en curso. EL PROVEEDOR respetará la intervención de operadores de servicios finales o de servicio portador para el acceso de sus abonados; no está permitida la creación o levantamiento de redes de acceso directas a sus abonados; salvo obtención del contrato habilitante (reventa) para incluir en un solo rubro mensual el cobro de los servicios en los planes de acceso a Internet que ofrezca. En este último caso el PERMISIONARIO presentará, el contrato de reventa debidamente registrado en la SENATEL, tanto al organismo técnico de control en caso de inspección, o al abonado que así lo requiera."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="f6aff493-f765-43b4-bf30-d61de11d4b4b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[CUARTA.- DERECHOS DEL CLIENTE]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="7a424d08-5284-4c37-8532-78ac92496a64"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.- A recibir el servicio de acuerdo a los términos estipulados en el presente contrato. 2.- A un reconocimiento económico que corresponda al tiempo que el servicio no ha estado disponible, cuando la causa fuese imputable al prestador del servicio. 3.- A que no se varíe el precio estipulado en el contrato o sus Anexos, mientras dure la vigencia del mismo o no se cambien las condiciones de la prestación a través de la suscripción de nuevos Anexos Técnico (s) y Comercial (es). 4.- A reclamar respecto de la calidad del servicio, cobros no contratados, elevaciones de tarifas, irregularidades en relación a la prestación del servicio ante la Defensoría del Pueblo y/o Superintendencia de Telecomunicaciones. 5.- A reclamar de manera integral por los problemas de calidad tanto del Acceso a la Red Internet, así como por las deficiencias en el enlace provisto para brindar el servicio. En particular en los casos en que aparezca EL PROVEEDOR como revendedor del servicio portador. En este último caso, responderá EL PROVEEDOR plenamente a su abonado conforme a la Ley Orgánica de Defensa del Consumidor, (independientemente de los acuerdos existentes entre los operadores o las responsabilidades ante las autoridades de telecomunicaciones). 6.- EL PROVEEDOR reconoce a sus clientes todos los derechos que se encuentran determinados en la Ley Orgánica de Defensa del Consumidor y su Reglamento; el Reglamento para la prestación del Servicios de Valor Agregado y la Resolución No. 216-09-CONATEL-2009."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="351e30d3-2717-496d-8962-e54fff2a9308"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[QUINTA.- PLAZO DE VIGENCIA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="c8e7767e-6c81-4293-96fb-21b250f57f2b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El presente contrato, tendrá un plazo de vigencia de 12 meses, contados a partir de la fecha de suscripción del mismo. En caso que, ninguna de las partes, notifique su deseo de dar por terminado el contrato, con 30 días de anticipación a la fecha de su vencimiento, se renovará automáticamente, así como de manera sucesiva, en iguales términos y condiciones que se encontraren vigentes."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="f2982240-3bec-4824-8d00-3bc4edf4f833"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEXTA.- CALIDAD DEL SERVICIO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="9eec6c80-32d9-4575-bf29-b97dba02d411"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL PROVEEDOR cumplirá los estándares de calidad emitidos y verificados por los organismos regulatorios y de control de las telecomunicaciones en el Ecuador, no obstante detalla que prestará sus servicios al cliente con los niveles de calidad especificados en el Anexo 1 (Técnico) que debidamente firmado por las partes forma parte integrante de este contrato. Así como declara que el SERVICIO DE INTERNET DEDICADO tenderá: Disponibilidad 99,6% mensual calculada sobre la base de 720 horas al mes. Para el cálculo de no disponibilidad del servicio no se considerará el tiempo durante el cual no se lo haya podido prestar debido a circunstancias de caso fortuito o fuerza mayor o completamente ajenas al proveedor. Para trabajos en caso de mantenimiento, en la medida de lo posible, deberán ser planificados en períodos de 4 horas después de la media noche, debiéndose notificar previamente el tiempo de no disponibilidad por mantenimiento y siguiendo lo previsto en la Ley Orgánica de Defensa del Consumidor. El PROVEEDOR recibirá requerimientos del Cliente, las 24 horas del día, a través de los números 0984789568 - 0995974781, o los que se haga conocer en el futuro a los abonados; o mediante e-mail: insysred@live.com y lo registrará en el sistema haciendo la apertura de un registro y lo dirigirá al personal indicado. EL PROVEEDOR realizará el seguimiento de los requerimientos y el cumplimiento de la corrección del problema, en un plazo máximo de 24 horas contadas desde que se notifique el problema. Las características técnicas y de calidad de servicio constan en el Anexo 1 que debidamente firmado por las partes es integrante del presente contrato y cumple con lo exigido en la Resolución 216-09-CONATEL-2009."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="1b24c7fa-5dd1-4711-bcdc-2c8a6fbdb13e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEPTIMA.- MANTENIMIENTO PREVENTIVO Y CORRECTIVO Y UTILIZACIÓN DE LA INFRAESTRUCTURA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="7a06e9f6-f443-4d64-bca1-e88fc3bfd1e7"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El mantenimiento preventivo y correctivo, ordinario y extraordinario corren por cuenta de EL PERMISIONARIO; mientras que el CLIENTE será responsable del manejo, mantenimiento, reparación y/o adecuación de los equipos que son parte de la red del CLIENTE. El CLIENTE, es responsable que las instalaciones eléctricas dentro de su infraestructura cuenten con energía eléctrica aterrizada y estabilizada; adicionalmente, el(los) equipo(s) que EL PROVEEDOR instale en la ubicación contratada por el CLIENTE debe(n) ser conectados a un toma de UPS provista por el CLIENTE. En casos de interrupción en la prestación del servicio se reintegrará o compensará al abonado conforme a la Ley Orgánica de Defensa del Consumidor y su Reglamento."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="c9f44176-7fc8-45ef-9bc3-86c9d43b7591"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[OCTAVA.-TERMINACIÓN]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="0eedca2e-7d46-4fe2-9c0d-5be2950d7ab6"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El presente contrato terminará por las siguientes causas: a) Por mutuo acuerdo de las partes b) Por incumplimiento de las obligaciones contractuales. c) Por vencimiento del plazo de vigencia previa comunicación de alguna de las partes; d) Por causas de fuerza mayor o caso fortuito debidamente comprobado; e) Por falta de pago de 2 mensualidades por parte del Cliente. f) El Cliente podrá dar por terminado unilateralmente el contrato en cualquier tiempo, previa notificación por escrito con la menos quince días de anticipación a la finalización del período en curso, no obstante el Cliente tendrá la obligación de cancelar los saldos pendientes únicamente por los servicios prestados hasta la fecha de la terminación unilateral del contrato, así como los valores adeudados por la adquisición de los bienes necesarios para la prestación del servicio de ser el caso. g) Si el CLIENTE utiliza los servicios contratados para fines distintos a los convenidos, o si los utiliza en prácticas contrarias a la ley, las buenas costumbres, la moral o cualquier forma que perjudique a EL PROVEEDOR."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="135">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="74404421-7a96-41e7-b1e0-977643072b03"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[NOVENA.- OBLIGACIONES DE LAS PARTES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="555" height="15" isPrintWhenDetailOverflows="true" uuid="1173f10a-b063-4078-9d8b-97b71ab3d115"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El PROVEEDOR se obliga a lo siguiente:
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="555" height="45" isPrintWhenDetailOverflows="true" uuid="dc7b7333-b244-4549-801c-563565feb1fe"/>
+				<box topPadding="0" leftPadding="10" bottomPadding="0" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1. Proporcionar el mantenimiento preventivo y correctivo, del servicio y la configuración respectiva.
+2. Las determinadas en la Resolución 216-09-CONATEL-2009, o las que emitiere el órgano regulador.
+3. Al pago de indemnizaciones por no cumplimiento de niveles de calidad estipulados en el presente contrato.
+4. Garantizarán la privacidad y confidencialidad de las telecomunicaciones en el servicio prestado al CLIENTE.
+5. Las que constan en le Reglamento para la Prestación de Servicios de Valor Agregado y sus modificaciones.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="95" width="555" height="40" isPrintWhenDetailOverflows="true" uuid="39ee7f56-6862-4543-aadd-4f988b29d4be"/>
+				<box topPadding="0" leftPadding="10" bottomPadding="0" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1. Manejo, mantenimiento, reparación y/o adecuación de los equipos que son parte de su red;
+2. Que las instalaciones eléctricas dentro de su infraestructura cuenten con energía eléctrica aterrizada y estabilizada;
+3. Que el (los) equipo(s) sean conectado (s) a un toma de UPS provista por este último.
+4. Pago oportuno e íntegro de los valores pactados en el presente contrato.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="555" height="15" isPrintWhenDetailOverflows="true" uuid="37347ce9-6779-43af-9702-90940d23b686"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El CLIENTE se obliga a lo siguiente:]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="84aba57b-8166-491d-bad2-0e0aa2145607"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DÉCIMA.- CAMBIOS EN EL CONTRATO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="a1508861-8872-4ae9-b19f-16a7b0b531b4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Si por alguna razón se reformara el Reglamento o la Ley que regula la prestación de los servicios de valor agregado e internet, el presente contrato podrá ser modificado en función de los cambios que se dieren previa aprobación y registro de la SENATEL."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="0da2eaa0-a076-4f94-b378-66dc851b478e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[UNDÉCIMA.- RESPONSABILIDAD]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="5f4d602c-0abb-4c1c-946d-25392528d569"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL CLIENTE asume la responsabilidad por los actos de sus empleados, contratistas o subcontratistas por el mal uso que eventualmente diere a los servicios que se les preste; en especial si se usare los servicios o enlaces prestados en actividades contrarias a las leyes y regulaciones de telecomunicaciones. Por su parte EL PROVEEDOR tendrá responsabilidad por la debida prestación del servicio contratado en las características y estándares del presente contrato y las señaladas en las Leyes y regulación vigente."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="16183983-fd1b-41a7-8a43-87107e7db43e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DUODÉCIMA.- CONTROVERSIAS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="c2ee40ae-ea9e-43b4-9ee6-551cc4d2b313"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Independientemente del juzgamiento de infracciones conforme a Ley Orgánica de Defensa del Consumidor, las partes acuerdan que podrán solucionar sus controversias a través de la mediación, en el Centro de Mediación y Arbitraje de la Cámara de Comercio de Guayaquil. Si la mediación no llegare a producirse las partes acuerdan expresamente que se someten a un Arbitraje en Derecho ante el mismo centro, para lo cual renuncian a la jurisdicción ordinaria, y se someten expresamente al arbitraje, obligándose a acatar el laudo que expida el Tribunal Arbitral y se comprometen a no interponer ningún tipo de recurso en contra del laudo dictado, a más de los permitidos en la ley, para lo cual presentan las respectivas copias de cédulas de identidad y ciudadanía para el reconocimiento de firmas respectivo. Para constancia de lo anterior las partes firman en tres ejemplares del mismo tenor, en el cantón DURAN, a los 28 días del mes de Diciembre de 2023."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="141">
+			<staticText>
+				<reportElement x="60" y="75" width="207" height="15" uuid="f541b874-8bb8-4229-8a1f-6fb66b55c2db"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JACOBO HIPOLITO CHANCAY CEPEDA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="75" width="207" height="15" uuid="df2840d6-73b5-4a93-baa1-c928034a1bf2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="90" width="207" height="15" uuid="d49f8969-3402-4bbf-bd1d-e998d7a9164b"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GERENTE GENERAL INSYSRED S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="105" width="207" height="15" uuid="c639e62b-00ed-431c-b1d9-16b82f3780ba"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.U.C. 0992220554001]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="105" width="207" height="15" uuid="7a3303d7-9669-421c-91c6-c70fd093d87e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TELF: " + $F{telefonosCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="90" width="207" height="15" uuid="a14d2318-d49f-499e-8f7a-c4803945d840"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["C.I./RUC: " + $F{identificacionCliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

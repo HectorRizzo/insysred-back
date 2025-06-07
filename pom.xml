@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.1</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>com.insysred</groupId>
+  <artifactId>isp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>isp</name>
+  <description>BackEnd Insysred</description>
+  <properties>
+    <java.version>21</java.version>
+    <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version> <!-- O usa la versión más reciente -->
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Implementar Swager -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${org.mapstruct.version}</version> <!-- Verifica la última versión en el momento de usarlo -->
+    </dependency>
+
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct-processor</artifactId>
+      <version>1.4.2.Final</version> <!-- Verifica la última versión en el momento de usarlo -->
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
+    </dependency>
+
+    <!-- Dependencias de Microtik -->
+    <dependency>
+      <groupId>me.legrange</groupId>
+      <artifactId>mikrotik</artifactId>
+      <version>3.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>6.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>10.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
+    <!-- Cognito -->
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-cognitoidp</artifactId>
+      <version>1.12.399</version>
+    </dependency>
+
+    <!-- S3 -->
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>s3</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>software.amazon.awssdk</groupId>
+          <artifactId>netty-nio-client</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>software.amazon.awssdk</groupId>
+          <artifactId>apache-client</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+
+    <!-- JWT DEPENDENCIES -->
+    <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>java-jwt</artifactId>
+      <version>4.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>jwks-rsa</artifactId>
+      <version>0.22.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl -->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-impl</artifactId>
+      <version>0.12.3</version>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-api</artifactId>
+      <version>0.12.3</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson -->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-jackson</artifactId>
+      <version>0.12.3</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>6.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>auth</artifactId>
+      <version>2.23.3</version>
+    </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>s3</artifactId>
+      <version>2.23.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+
+    <!-- Leer xls -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.2.5</version>
+    </dependency>
+
+    <!-- Jasper Reports -->
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports</artifactId>
+      <version>6.21.2</version>
+    </dependency>
+
+    <dependency>
+	  <groupId>net.sf.jasperreports</groupId>
+	  <artifactId>jasperreports-fonts</artifactId>
+	  <version>6.16.0</version>
+	</dependency>
+
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <image>
+            <builder>paketobuildpacks/builder-jammy-base:latest</builder>
+          </image>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

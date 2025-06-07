@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte_contrato" pageWidth="595" pageHeight="842" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6f0d106-011a-4360-8fcd-39553f713ed8">
+	<property name="ireport.zoom" value="1.818181818181863"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="238"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="emp_logo" class="java.lang.String"/>
+	<parameter name="emp_direccion" class="java.lang.String"/>
+	<parameter name="emp_email" class="java.lang.String"/>
+	<parameter name="emp_telefonos" class="java.lang.String"/>
+	<parameter name="idContrato" class="java.lang.Long"/>
+	<parameter name="fechaContrato" class="java.lang.String"/>
+	<parameter name="representante_nombre" class="java.lang.String"/>
+	<parameter name="representante_cargo" class="java.lang.String"/>
+	<parameter name="representante_identificacion" class="java.lang.String"/>
+	<field name="nombreEmpresaCliente" class="java.lang.String"/>
+	<field name="identificacionCliente" class="java.lang.String"/>
+	<field name="nombreCliente" class="java.lang.String"/>
+	<field name="direccionCliente" class="java.lang.String"/>
+	<field name="referenciaCliente" class="java.lang.String"/>
+	<field name="telefonosCliente" class="java.lang.String"/>
+	<field name="correoCliente" class="java.lang.String"/>
+	<field name="cantonCliente" class="java.lang.String"/>
+	<field name="provinciaCliente" class="java.lang.String"/>
+	<field name="contratoPrestacion" class="java.lang.String"/>
+	<field name="clausulaPrimera" class="java.lang.String"/>
+	<field name="clausulaSegunda" class="java.lang.String"/>
+	<field name="clausulaTercera" class="java.lang.String"/>
+	<field name="clausulaCuarta" class="java.lang.String"/>
+	<field name="clausulaQuinta" class="java.lang.String"/>
+	<field name="clausulaSexta" class="java.lang.String"/>
+	<field name="clausulaSeptima" class="java.lang.String"/>
+	<field name="clausulaOctava" class="java.lang.String"/>
+	<field name="clausulaNovena" class="java.lang.String"/>
+	<field name="clausulaDecima" class="java.lang.String"/>
+	<field name="clausulaUndecima" class="java.lang.String"/>
+	<field name="clausulaDuodecima" class="java.lang.String"/>
+	<title>
+		<band height="106">
+			<textField>
+				<reportElement x="0" y="50" width="392" height="15" forecolor="#00008C" uuid="0188e02b-9ba2-4e77-948e-eabc1ec0a4a3"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{emp_direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="65" width="392" height="15" forecolor="#00008C" uuid="3a0a2e16-bd89-4190-ac12-232e76188d33"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TELF: " + $P{emp_telefonos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="314" height="16" forecolor="#00008C" uuid="c4c78278-030f-4abc-ab2b-6a11c329e67f"/>
+				<box bottomPadding="3"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EMAIL: " + $P{emp_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="80" width="241" height="16" forecolor="#00008C" uuid="03411e63-ecda-4e02-9321-8b0496996d72"/>
+				<box bottomPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaContrato}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement mode="Transparent" x="409" y="0" width="146" height="54" forecolor="#00008C" uuid="bb1d439d-f0b3-4f08-8c4d-142237479977"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="409" y="0" width="146" height="16" forecolor="#00008C" uuid="380f5f0a-ace9-4b47-885f-47ea56e44f39"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEN DE SERVICIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="409" y="38" width="146" height="16" forecolor="#00008C" uuid="a74bf3a1-e2dd-42f8-a745-a20207b1e6e2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R.U.C: " + "0992220554001"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="16" width="146" height="22" forecolor="#EE1212" uuid="fb76789b-fcd4-4d53-85f7-0d1604d615eb"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="17" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N° " + $P{idContrato}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="194" height="50" uuid="aa599682-a2ac-4c2b-bbd6-b88c4131e19e"/>
+				<imageExpression><![CDATA[$P{emp_logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="17" uuid="3dbbfd1a-a930-4995-8fdf-b38f3989816b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="17" width="76" height="15" uuid="46aaf76a-431a-4a94-b880-59395600c95a"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[EMPRESA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="17" width="75" height="15" uuid="6d00c5f7-75f0-4fc6-9bd7-70deeb97104c"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC/CI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="76" height="15" uuid="95f93f94-ee26-4c6d-a600-cb9f717bc5d9"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="47" width="76" height="15" uuid="f6df39d1-4f61-4e91-a62a-4d23f08a974b"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="62" width="76" height="15" uuid="068172eb-36db-4c35-b9aa-f021770d2863"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CORREO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="32" width="75" height="15" uuid="4cfb02a3-c464-4027-8cf8-ae423ddecd8a"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="77" width="76" height="15" uuid="226ab9a1-564d-4d52-b3bd-0817fcb575fa"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROVINCIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="62" width="75" height="15" uuid="e8a6b445-716d-4960-926b-e8acbae3950d"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTÓN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="76" y="17" width="202" height="15" uuid="d6c6f5f8-c882-49f2-86c0-8c58f036a7bc"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresaCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="17" width="202" height="15" uuid="635a9804-4d06-4207-9752-a56913fe69c1"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{identificacionCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="32" width="202" height="15" uuid="d15ccb13-81c6-4517-894f-d7551fffef7b"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="47" width="202" height="15" uuid="4c31dba2-eef1-47ac-a6c1-9fd0cce47a3f">
+					<printWhenExpression><![CDATA[$F{direccionCliente} != null]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccionCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="62" width="202" height="15" uuid="c97a05a8-c795-4b01-9d0c-97ab6a2670b8"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{correoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="32" width="202" height="15" uuid="a34d3bc3-8423-4d1c-b32b-ca563a085337"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonosCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="77" width="202" height="15" uuid="8648e6cd-11fb-40a9-bb12-fe00884d108c"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{provinciaCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="62" width="202" height="15" uuid="985f7aca-105e-4b1f-ac5a-f9b5abbc612e"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantonCliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="278" y="47" width="75" height="15" uuid="655d1750-3695-44c4-8793-be7abf15c8aa"/>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REFERENCIA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="47" width="202" height="15" uuid="5aab9b68-22d3-4731-aff9-c8f287a7d891">
+					<printWhenExpression><![CDATA[$F{direccionCliente} != null]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="3" bottomPadding="1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referenciaCliente}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="0116c9ea-5fff-45eb-ba95-66d8b1bd21ff"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contratoPrestacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="fd312ed6-86a7-4b70-8c17-1e1233af3765"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTRATO DE PRESTACIÓN DE SERVICIOS DE VALOR AGREGADO DE ACCESO A INTERNET No. 000181
+
+]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="b78ffb8b-3f20-4e02-abb3-1f3659e14ebd"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[PRIMERA.- ANTECEDENTES]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="6f075d32-f7bd-4cd6-aef5-58871fd435f0"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaPrimera}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="8e7a2f15-561e-4067-b01c-9285e24d8656"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaSegunda}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="3c43c929-3282-4fe3-9026-e12d6ffa9cbc"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEGUNDA.- OBJETO, CARACTERISTICAS]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="0cb0799a-3642-42d5-bd4d-72d9dde3c6e7"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[TERCERA.- PRECIO Y FORMA DE PAGO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="0b99b609-6ee7-4d10-8330-787207b830c3"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaTercera}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="f6aff493-f765-43b4-bf30-d61de11d4b4b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[CUARTA.- DERECHOS DEL CLIENTE]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="7a424d08-5284-4c37-8532-78ac92496a64"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaCuarta}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="351e30d3-2717-496d-8962-e54fff2a9308"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[QUINTA.- PLAZO DE VIGENCIA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="c8e7767e-6c81-4293-96fb-21b250f57f2b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaQuinta}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="f2982240-3bec-4824-8d00-3bc4edf4f833"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEXTA.- CALIDAD DEL SERVICIO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="9eec6c80-32d9-4575-bf29-b97dba02d411"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaSexta}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="1b24c7fa-5dd1-4711-bcdc-2c8a6fbdb13e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SEPTIMA.- MANTENIMIENTO PREVENTIVO Y CORRECTIVO Y UTILIZACIÓN DE LA INFRAESTRUCTURA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="7a06e9f6-f443-4d64-bca1-e88fc3bfd1e7"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaSeptima}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="c9f44176-7fc8-45ef-9bc3-86c9d43b7591"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[OCTAVA.-TERMINACIÓN]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="0eedca2e-7d46-4fe2-9c0d-5be2950d7ab6"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaOctava}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="74404421-7a96-41e7-b1e0-977643072b03"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[NOVENA.- OBLIGACIONES DE LAS PARTES]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="8f9458dc-fc44-4c28-8dd3-4a24f1220ae5"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaNovena}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="84aba57b-8166-491d-bad2-0e0aa2145607"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DÉCIMA.- CAMBIOS EN EL CONTRATO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="a1508861-8872-4ae9-b19f-16a7b0b531b4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaDecima}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="0da2eaa0-a076-4f94-b378-66dc851b478e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[UNDÉCIMA.- RESPONSABILIDAD]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="5f4d602c-0abb-4c1c-946d-25392528d569"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaUndecima}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="16183983-fd1b-41a7-8a43-87107e7db43e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DUODÉCIMA.- CONTROVERSIAS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="c2ee40ae-ea9e-43b4-9ee6-551cc4d2b313"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clausulaDuodecima}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="141">
+			<textField>
+				<reportElement x="60" y="75" width="207" height="15" uuid="60883fd4-94db-4e53-8a75-0e63e22f8d31"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{representante_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="75" width="207" height="15" uuid="df2840d6-73b5-4a93-baa1-c928034a1bf2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="90" width="207" height="15" uuid="2ef16502-0538-446b-b0c5-c74c78c502f1"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{representante_cargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="105" width="207" height="15" uuid="244dba1b-30c1-46da-a7d3-97c11bde3e40"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{representante_identificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="105" width="207" height="15" uuid="7a3303d7-9669-421c-91c6-c70fd093d87e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TELF: " + $F{telefonosCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="90" width="207" height="15" uuid="a14d2318-d49f-499e-8f7a-c4803945d840"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["C.I./RUC: " + $F{identificacionCliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>
